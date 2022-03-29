@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "ru.mirea.lugovoy.layouttype"
+        applicationId "ru.mirea.lugovoy.clickbuttons"
         minSdk 32
         targetSdk 32
         versionCode 1

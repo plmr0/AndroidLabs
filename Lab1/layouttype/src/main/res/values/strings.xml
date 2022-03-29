@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Layout Type</string>
+    <string name="name_tag">Name:</string>
+    <string name="name_name">Ilya Lugovoy</string>
+    <string name="organization_tag">Organization:</string>
+    <string name="organization_name">RTU MIREA</string>
+    <string name="phone_number">+7 (777) 777–77–77</string>
+    <string name="phone_tag">(Mobile)</string>
+    <string name="save_button">Save</string>
+
+    <string name="some_text">New life for mirea activity</string>
 </resources>

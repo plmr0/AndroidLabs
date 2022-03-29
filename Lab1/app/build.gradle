@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "ru.mirea.lugovoy.practice1"
-        minSdk 30
+        minSdk 32
         targetSdk 32
         versionCode 1
         versionName "1.0"
