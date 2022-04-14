@@ -16,7 +16,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity
 {
-    private static final String CHANNEL_ID = "com.mirea.asd.notification.ANDROID";
+    private static final String CHANNEL_ID = "ru.mirea.lugovoy.practice2.notificationapp.ANDROID";
     private int IDENTIFICATE_MSG = 0;
 
     @Override
