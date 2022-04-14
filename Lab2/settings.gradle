@@ -16,3 +16,4 @@ rootProject.name = "Lab2"
 include ':app'
 include ':lifecycleactivity'
 include ':multiactivity'
+include ':intentfilter'
