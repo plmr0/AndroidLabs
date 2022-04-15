@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Lab3"
-include ':IntentApp'
+include ':intentapp'
+include ':share'
