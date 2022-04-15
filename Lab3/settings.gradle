@@ -16,3 +16,4 @@ rootProject.name = "Lab3"
 include ':intentapp'
 include ':share'
 include ':resultactivity'
+include ':systemintentsapp'
