@@ -2,7 +2,7 @@
     <string name="app_name">MireaProject</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">BSBO\-10\-20</string>
+    <string name="nav_header_title">BSBO\-05\-20</string>
     <string name="nav_header_subtitle">Lugovoy Ilya</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -28,6 +28,8 @@
     <string name="calculator_divide">/</string>
     <string name="calculator_equals">=</string>
     <string name="calculator_clean">C</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="browser_button">Go</string>
+    <string name="browser_back">Back</string>
+    <string name="browser_forward">Forward</string>
 </resources>

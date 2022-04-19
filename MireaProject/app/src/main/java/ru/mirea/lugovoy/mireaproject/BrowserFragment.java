@@ -1,5 +1,6 @@
 package ru.mirea.lugovoy.mireaproject;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,58 +8,93 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BrowserFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class BrowserFragment extends Fragment {
+public class BrowserFragment extends Fragment implements View.OnClickListener
+{
+    private WebView webView;
+    private EditText editTextAddress;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BrowserFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BrowserFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BrowserFragment newInstance(String param1, String param2) {
-        BrowserFragment fragment = new BrowserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    public BrowserFragment() { }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    }
+
+    private void loadDefaultPage()
+    {
+        String defaultPage = "https://www.yandex.ru/";
+        webView.loadUrl(defaultPage);
+    }
+
+    private void loadUrl(String url)
+    {
+        if (!url.startsWith("https://"))
+        {
+            url = "https://" + url;
+            webView.loadUrl(url);
         }
     }
 
+    @SuppressLint({"SetJavaScriptEnabled", "CutPasteId"})
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_browser, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view = inflater.inflate(R.layout.fragment_browser, container, false);
+
+        editTextAddress = (EditText) view.findViewById(R.id.editTextAddressBar);
+
+        Button go = view.findViewById(R.id.buttonGo);
+        go.setOnClickListener(this);
+
+        Button back = view.findViewById(R.id.buttonBack);
+        back.setOnClickListener(this);
+
+        Button forward = view.findViewById(R.id.buttonForward);
+        forward.setOnClickListener(this);
+
+        webView = (WebView) view.findViewById(R.id.browser);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+
+        webView.setWebViewClient(new WebViewClient()
+        {
+            @Override
+            public void onPageFinished(WebView v, String url)
+            {
+                super.onPageFinished(v, url);
+                editTextAddress.setText(url);
+            }
+        });
+
+        loadDefaultPage();
+
+        return view;
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.buttonGo:
+                String url = this.editTextAddress.getText().toString();
+                loadUrl(url);
+                break;
+            case R.id.buttonBack:
+                webView.goBack();
+                break;
+            case R.id.buttonForward:
+                webView.goForward();
+                break;
+            default:
+                break;
+        }
     }
 }
