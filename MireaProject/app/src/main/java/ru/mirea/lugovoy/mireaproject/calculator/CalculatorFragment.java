@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject;
+package ru.mirea.lugovoy.mireaproject.calculator;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import ru.mirea.lugovoy.mireaproject.R;
 
 public class CalculatorFragment extends Fragment implements View.OnClickListener
 {

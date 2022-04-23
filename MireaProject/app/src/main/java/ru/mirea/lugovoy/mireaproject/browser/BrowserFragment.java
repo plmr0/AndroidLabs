@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject;
+package ru.mirea.lugovoy.mireaproject.browser;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+
+import ru.mirea.lugovoy.mireaproject.R;
 
 public class BrowserFragment extends Fragment implements View.OnClickListener
 {

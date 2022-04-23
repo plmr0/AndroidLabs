@@ -7,12 +7,17 @@
 
     <fragment
         android:id="@+id/nav_calculator"
-        android:name="ru.mirea.lugovoy.mireaproject.CalculatorFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.calculator.CalculatorFragment"
         android:label="@string/menu_calculator"
         tools:layout="@layout/fragment_calculator" />
     <fragment
         android:id="@+id/nav_browser"
-        android:name="ru.mirea.lugovoy.mireaproject.BrowserFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.browser.BrowserFragment"
         android:label="@string/menu_browser"
         tools:layout="@layout/fragment_browser" />
+    <fragment
+        android:id="@+id/nav_music"
+        android:name="ru.mirea.lugovoy.mireaproject.music.MusicFragment"
+        android:label="@string/menu_music"
+        tools:layout="@layout/fragment_music" />
 </navigation>
