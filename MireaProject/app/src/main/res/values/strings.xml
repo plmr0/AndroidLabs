@@ -37,5 +37,9 @@
     <string name="browser_back">Back</string>
     <string name="browser_forward">Forward</string>
 
+    <string name="sensor_pressure">Pressure:</string>
+    <string name="sensor_light">Light:</string>
+    <string name="sensor_magnetic_field">Magnetic field:</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
