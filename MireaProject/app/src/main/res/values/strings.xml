@@ -10,6 +10,9 @@
     <string name="menu_calculator">Calculator</string>
     <string name="menu_browser">Browser</string>
     <string name="menu_music">Music Player</string>
+    <string name="menu_sensor">Sensors</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_recorder">Recorder</string>
 
     <string name="calculator_0">0</string>
     <string name="calculator_1">1</string>
@@ -33,6 +36,6 @@
     <string name="browser_button">Go</string>
     <string name="browser_back">Back</string>
     <string name="browser_forward">Forward</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
