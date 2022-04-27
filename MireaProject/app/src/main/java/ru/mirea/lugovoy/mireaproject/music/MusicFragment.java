@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.IBinder;
@@ -65,20 +64,6 @@ public class MusicFragment extends Fragment implements View.OnClickListener
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState)
-    {
-        View view = getView();
-        TextView author = (TextView) view.findViewById(R.id.authorName);
-        TextView track = (TextView) view.findViewById(R.id.trackName);
-        ImageView image = (ImageView) view.findViewById(R.id.albumImage);
-
-        outState.putString("author", author.getText().toString());
-        outState.putString("track", track.getText().toString());
-
-        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -140,15 +125,15 @@ public class MusicFragment extends Fragment implements View.OnClickListener
 
     private void bindService()
     {
-        Intent intent = new Intent(getContext(), MusicService.class);
-        getContext().bindService(intent, connection, Context.BIND_AUTO_CREATE);
+        Intent intent = new Intent(requireContext(), MusicService.class);
+        requireActivity().bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
     private void unbindService()
     {
         if (isBound)
         {
-            getContext().unbindService(connection);
+            requireActivity().unbindService(connection);
             isBound = false;
         }
     }

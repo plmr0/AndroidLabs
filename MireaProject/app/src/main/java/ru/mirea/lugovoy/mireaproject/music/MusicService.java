@@ -7,9 +7,11 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
-import android.util.Log;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+
+import ru.mirea.lugovoy.mireaproject.recorder.RecorderFragment;
 
 public class MusicService extends Service
 {
@@ -19,7 +21,7 @@ public class MusicService extends Service
 
     public class LocalBinder extends Binder
     {
-        MusicService getService()
+        public MusicService getService()
         {
             return MusicService.this;
         }
@@ -48,6 +50,12 @@ public class MusicService extends Service
     public void play(AudioFile audioFile)
     {
         createMediaPlayer(audioFile.getUri());
+        mediaPlayer.start();
+    }
+
+    public void play(FileDescriptor fileDescriptor)
+    {
+        createMediaPlayer(fileDescriptor);
         mediaPlayer.start();
     }
 
@@ -82,7 +90,7 @@ public class MusicService extends Service
         }
     }
 
-    public void createMediaPlayer(Uri uri)
+    private void createMediaPlayer(Uri uri)
     {
         this.mediaPlayer = new MediaPlayer();
         this.mediaPlayer.setAudioAttributes(
@@ -96,21 +104,42 @@ public class MusicService extends Service
         {
             this.mediaPlayer.setDataSource(getApplicationContext(), uri);
             this.mediaPlayer.prepare();
-            this.mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+            this.mediaPlayer.setOnCompletionListener(mp ->
             {
-                @Override
-                public void onCompletion(MediaPlayer mp)
-                {
-                    releaseMediaPlayer();
-                    stopSelf();
-                    MusicFragment.setButtonPlay();
-                }
-            });
+                releaseMediaPlayer();
+                stopSelf();
 
+                MusicFragment.setButtonPlay();
+            });
         }
-        catch (IOException e)
+        catch (IOException ignored) { }
+    }
+
+    private void createMediaPlayer(FileDescriptor fileDescriptor)
+    {
+        this.mediaPlayer = new MediaPlayer();
+        this.mediaPlayer.setAudioAttributes(
+                new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .build()
+        );
+
+        try
         {
-            e.getStackTrace();
+            this.mediaPlayer.setDataSource(fileDescriptor);
+            this.mediaPlayer.prepare();
+            this.mediaPlayer.setOnCompletionListener(mp ->
+            {
+                releaseMediaPlayer();
+                stopSelf();
+
+                RecorderFragment.startPlayingButton.setEnabled(true);
+                RecorderFragment.stopPlayingButton.setEnabled(false);
+                RecorderFragment.startRecordingButton.setEnabled(true);
+                RecorderFragment.stopRecordingButton.setEnabled(false);
+            });
         }
+        catch (IOException ignored) { }
     }
 }
