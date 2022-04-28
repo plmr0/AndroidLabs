@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MireaProject</string>
+    <string name="camera_save">Сохранить</string>
+    <string name="camera_take_photo">Сделать фото</string>
+    <string name="hello_blank_fragment">Привет, пустой фрагмент</string>
+    <string name="menu_browser">Браузер</string>
+    <string name="menu_calculator">Калькулятор</string>
+    <string name="menu_camera">Камера</string>
+    <string name="menu_music">Аудиоплеер</string>
+    <string name="menu_recorder">Диктофон</string>
+    <string name="menu_sensor">Сенсоры</string>
+    <string name="nav_header_subtitle">Зайдите в настройки</string>
+    <string name="action_settings">Настройки</string>
+    <string name="browser_back">Назад</string>
+    <string name="browser_button">Перейти</string>
+    <string name="browser_forward">Вперед</string>
+    <string name="nav_header_desc">Заголовок</string>
+    <string name="navigation_drawer_close">Закрыть навигационную панель</string>
+    <string name="navigation_drawer_open">Открыть навигационную панель</string>
+    <string name="recorder_play">Воспроизвести</string>
+    <string name="recorder_start">Начать запись</string>
+    <string name="recorder_stop">Остановить запись</string>
+    <string name="recorder_stop_playing">Остановить</string>
+    <string name="sensor_light">Свет:</string>
+    <string name="sensor_magnetic_field">Магнитное поле:</string>
+    <string name="sensor_pressure">Давление:</string>
+    <string name="settings_name">Имя</string>
+    <string name="settings_group">Группа</string>
+    <string name="settings_name_placeholder">Введите имя</string>
+    <string name="settings_group_placeholder">Введите группу</string>
+    <string name="nav_header_title">Можно поменять</string>
+    <string name="settings_button">Сохранить</string>
+</resources>
