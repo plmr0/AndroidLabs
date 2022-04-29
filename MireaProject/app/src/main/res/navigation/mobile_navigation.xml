@@ -35,4 +35,9 @@
         android:name="ru.mirea.lugovoy.mireaproject.recorder.RecorderFragment"
         android:label="@string/menu_recorder"
         tools:layout="@layout/fragment_recorder" />
+    <fragment
+        android:id="@+id/nav_stories"
+        android:name="ru.mirea.lugovoy.mireaproject.stories.StoriesFragment"
+        android:label="@string/menu_stories"
+        tools:layout="@layout/fragment_stories" />
 </navigation>

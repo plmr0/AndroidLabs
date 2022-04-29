@@ -26,6 +26,7 @@ public class SettingsActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        setTitle(R.string.action_settings);
 
         this.nameEditText = (EditText) findViewById(R.id.nameEditText);
         this.groupEditText = (EditText) findViewById(R.id.groupEditText);

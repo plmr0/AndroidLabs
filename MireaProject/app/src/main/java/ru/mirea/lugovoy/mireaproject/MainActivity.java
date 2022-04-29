@@ -19,6 +19,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
+import ru.mirea.lugovoy.mireaproject.stories.db.App;
+import ru.mirea.lugovoy.mireaproject.stories.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity
 
     private SharedPreferences preferences;
 
+    public static AppDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -51,12 +55,14 @@ public class MainActivity extends AppCompatActivity
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_calculator, R.id.nav_browser, R.id.nav_music, R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder)
+                R.id.nav_calculator, R.id.nav_browser, R.id.nav_music, R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder, R.id.nav_stories)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        db = App.getInstance().getDatabase();
 
         this.headerView = navigationView.getHeaderView(0);
 
@@ -71,7 +77,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 228 && resultCode == RESULT_OK)
+        if (requestCode == 6969 && resultCode == RESULT_OK)
         {
             String name = data.getExtras().getString("name", getStringRes(R.string.nav_header_title));
             String group = data.getExtras().getString("group", getStringRes(R.string.nav_header_subtitle));
@@ -127,6 +133,6 @@ public class MainActivity extends AppCompatActivity
     private void openSettings()
     {
         Intent intent = new Intent(this, SettingsActivity.class);
-        startActivityForResult(intent, 228);
+        startActivityForResult(intent, 6969);
     }
 }

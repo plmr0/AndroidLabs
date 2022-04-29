@@ -31,4 +31,12 @@
     <string name="settings_group_placeholder">Введите группу</string>
     <string name="nav_header_title">Можно поменять</string>
     <string name="settings_button">Сохранить</string>
+    <string name="menu_stories">Истории</string>
+    <string name="story_add_title">Добавление истории</string>
+    <string name="story_add_subject_placeholder">Введите тему</string>
+    <string name="story_add_text_placeholder">Введите текст</string>
+    <string name="story_add_ok">Добавить</string>
+    <string name="story_add_cancel">Отмена</string>
+    <string name="story_subject_name">Тема</string>
+    <string name="story_text_name">Текст</string>
 </resources>
