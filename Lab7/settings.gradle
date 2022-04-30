@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Lab7"
 include ':socketconnection'
 include ':httpurlconnection'
+include ':firebaseauth'
