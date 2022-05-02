@@ -40,4 +40,9 @@
         android:name="ru.mirea.lugovoy.mireaproject.stories.StoriesFragment"
         android:label="@string/menu_stories"
         tools:layout="@layout/fragment_stories" />
+    <fragment
+        android:id="@+id/nav_web_info"
+        android:name="ru.mirea.lugovoy.mireaproject.webinfo.WebInfoFragment"
+        android:label="@string/menu_web"
+        tools:layout="@layout/fragment_web_info" />
 </navigation>

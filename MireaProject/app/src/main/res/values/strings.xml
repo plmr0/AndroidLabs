@@ -32,6 +32,7 @@
     <string name="menu_camera">Camera</string>
     <string name="menu_recorder">Recorder</string>
     <string name="menu_stories">Stories</string>
+    <string name="menu_web">Web Info</string>
 
     <string name="calculator_0" translatable="false">0</string>
     <string name="calculator_1" translatable="false">1</string>
@@ -81,6 +82,10 @@
     <string name="story_add_text_placeholder">Enter text</string>
     <string name="story_add_ok">Add</string>
     <string name="story_add_cancel">Cancel</string>
+
+    <string name="web_info_no_internet">No Internet</string>
+    <string name="web_info_downloading">Downloading…</string>
+    <string name="web_info_bitcoin" translatable="false">Bitcoin</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

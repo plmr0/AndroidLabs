@@ -1,7 +1,6 @@
 package ru.mirea.lugovoy.mireaproject;
 
 import android.annotation.SuppressLint;
-import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,8 +19,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
-import ru.mirea.lugovoy.mireaproject.music.MusicFragment;
-import ru.mirea.lugovoy.mireaproject.music.MusicService;
 import ru.mirea.lugovoy.mireaproject.stories.db.App;
 import ru.mirea.lugovoy.mireaproject.stories.db.AppDatabase;
 
@@ -55,12 +52,16 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = binding.drawerLayout;
         navigationView = binding.navView;
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_calculator, R.id.nav_browser, R.id.nav_music, R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder, R.id.nav_stories)
+                R.id.nav_calculator, R.id.nav_browser, R.id.nav_music,
+                R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder,
+                R.id.nav_stories, R.id.nav_web_info)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

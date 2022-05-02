@@ -53,4 +53,7 @@
     <string name="error_sign_in_failed">Не удалось войти, смотрите логи</string>
     <string name="email">Почта</string>
     <string name="password">Пароль</string>
+    <string name="menu_web">Web Инфо</string>
+    <string name="web_info_no_internet">Нет Соединения</string>
+    <string name="web_info_downloading">Загрузка…</string>
 </resources>
