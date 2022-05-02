@@ -1,6 +1,7 @@
 package ru.mirea.lugovoy.mireaproject;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
+import ru.mirea.lugovoy.mireaproject.music.MusicFragment;
+import ru.mirea.lugovoy.mireaproject.music.MusicService;
 import ru.mirea.lugovoy.mireaproject.stories.db.App;
 import ru.mirea.lugovoy.mireaproject.stories.db.AppDatabase;
 
@@ -106,12 +109,27 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        if (item.getItemId() == R.id.action_settings)
+        int selectedItem = item.getItemId();
+
+        switch (selectedItem)
         {
-            openSettings();
-            return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            case R.id.action_logout:
+                setResult(RESULT_OK);
+                finish();
+                return true;
         }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        setResult(RESULT_CANCELED);
+        finish();
     }
 
     private String getStringRes(int id)

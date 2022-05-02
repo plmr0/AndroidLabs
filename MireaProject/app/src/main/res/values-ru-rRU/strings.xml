@@ -39,4 +39,18 @@
     <string name="story_add_cancel">Отмена</string>
     <string name="story_subject_name">Тема</string>
     <string name="story_text_name">Текст</string>
+    <string name="label_emailpassword">Аутентификация через Почту/Пароль</string>
+    <string name="desc_emailpassword">Используйте почту для аутентификации через Firebase</string>
+    <string name="hint_user_id">Идентификатор пользователя</string>
+    <string name="sign_in">Войти</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="sign_out">Выйти</string>
+    <string name="verify_email">Подтвердите почту</string>
+    <string name="signed_in">Авторизован</string>
+    <string name="signed_out">Не авторизован</string>
+    <string name="auth_failed">Не удалось войти</string>
+    <string name="emailpassword_title_text">Почта и пароль</string>
+    <string name="error_sign_in_failed">Не удалось войти, смотрите логи</string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
 </resources>

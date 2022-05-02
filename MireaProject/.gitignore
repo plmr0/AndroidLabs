@@ -88,3 +88,6 @@ lint/tmp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Project
+/app/google-services.json
