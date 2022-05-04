@@ -16,3 +16,4 @@ rootProject.name = "Lab8"
 include ':lifecycle'
 include ':livedata'
 include ':networkstate'
+include ':viewmodel'
