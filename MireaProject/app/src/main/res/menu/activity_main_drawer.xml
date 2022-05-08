@@ -33,8 +33,8 @@
             android:icon="@drawable/ic_menu_stories"
             android:title="@string/menu_stories" />
         <item
-            android:id="@+id/nav_web_info"
-            android:icon="@drawable/ic_menu_web_info"
-            android:title="@string/menu_web" />
+            android:id="@+id/nav_bitcoin"
+            android:icon="@drawable/ic_menu_bitcoin"
+            android:title="@string/web_info_bitcoin" />
     </group>
 </menu>

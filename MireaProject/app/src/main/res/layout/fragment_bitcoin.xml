@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.webinfo.WebInfoFragment">
+    tools:context=".ui.bitcoin.BitcoinFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/ic_web_info_bitcoin" />
+                android:src="@drawable/ic_menu_bitcoin" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

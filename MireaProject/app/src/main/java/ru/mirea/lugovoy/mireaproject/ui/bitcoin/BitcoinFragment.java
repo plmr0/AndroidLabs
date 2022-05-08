@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.ui.webinfo;
+package ru.mirea.lugovoy.mireaproject.ui.bitcoin;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,7 +26,7 @@ import java.net.URL;
 
 import ru.mirea.lugovoy.mireaproject.R;
 
-public class WebInfoFragment extends Fragment
+public class BitcoinFragment extends Fragment
 {
     private final String URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
@@ -44,7 +44,7 @@ public class WebInfoFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_web_info, container, false);
+        View view = inflater.inflate(R.layout.fragment_bitcoin, container, false);
 
         this.date = view.findViewById(R.id.dateBitcoinTextView);
         this.dollar = view.findViewById(R.id.dollarBitcoinTextView);
