@@ -36,5 +36,9 @@
             android:id="@+id/nav_bitcoin"
             android:icon="@drawable/ic_menu_bitcoin"
             android:title="@string/web_info_bitcoin" />
+        <item
+            android:id="@+id/nav_photo"
+            android:icon="@drawable/ic_menu_photo"
+            android:title="@string/photo_title" />
     </group>
 </menu>

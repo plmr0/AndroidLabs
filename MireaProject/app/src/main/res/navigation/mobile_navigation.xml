@@ -45,4 +45,9 @@
         android:name="ru.mirea.lugovoy.mireaproject.ui.bitcoin.BitcoinFragment"
         android:label="@string/web_info_bitcoin"
         tools:layout="@layout/fragment_bitcoin" />
+    <fragment
+        android:id="@+id/nav_photo"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.photo.PhotoFragment"
+        android:label="@string/photo_title"
+        tools:layout="@layout/fragment_photo" />
 </navigation>

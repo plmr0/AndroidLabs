@@ -4,8 +4,6 @@ import android.app.Application;
 
 import androidx.room.Room;
 
-import ru.mirea.lugovoy.mireaproject.ui.stories.db.AppDatabase;
-
 public class App extends Application
 {
     public static App instance;

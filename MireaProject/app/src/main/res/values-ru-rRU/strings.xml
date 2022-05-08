@@ -56,4 +56,6 @@
     <string name="menu_web">Web Инфо</string>
     <string name="web_info_no_internet">Нет Соединения</string>
     <string name="web_info_downloading">Загрузка…</string>
+    <string name="photo_title">Фотографии</string>
+    <string name="photo_camera_no_access">Нет доступа к камере!</string>
 </resources>

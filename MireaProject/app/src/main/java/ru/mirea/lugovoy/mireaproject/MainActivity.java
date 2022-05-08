@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
 import ru.mirea.lugovoy.mireaproject.db.App;
-import ru.mirea.lugovoy.mireaproject.ui.stories.db.AppDatabase;
+import ru.mirea.lugovoy.mireaproject.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_calculator, R.id.nav_browser, R.id.nav_music,
                 R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder,
-                R.id.nav_stories, R.id.nav_bitcoin)
+                R.id.nav_stories, R.id.nav_bitcoin, R.id.nav_photo)
                 .setOpenableLayout(drawer)
                 .build();
 
