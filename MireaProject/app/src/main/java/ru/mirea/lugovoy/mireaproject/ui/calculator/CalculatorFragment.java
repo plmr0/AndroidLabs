@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.calculator;
+package ru.mirea.lugovoy.mireaproject.ui.calculator;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

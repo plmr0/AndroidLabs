@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.recorder;
+package ru.mirea.lugovoy.mireaproject.ui.recorder;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -31,7 +31,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import ru.mirea.lugovoy.mireaproject.R;
-import ru.mirea.lugovoy.mireaproject.music.MusicService;
+import ru.mirea.lugovoy.mireaproject.ui.music.MusicService;
 
 public class RecorderFragment extends Fragment
 {

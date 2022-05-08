@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.music;
+package ru.mirea.lugovoy.mireaproject.ui.music;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;

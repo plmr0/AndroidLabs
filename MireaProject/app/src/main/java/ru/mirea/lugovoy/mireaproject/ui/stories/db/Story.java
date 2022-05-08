@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.stories.db;
+package ru.mirea.lugovoy.mireaproject.ui.stories.db;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

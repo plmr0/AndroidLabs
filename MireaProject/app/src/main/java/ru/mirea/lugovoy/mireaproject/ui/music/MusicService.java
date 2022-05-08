@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.music;
+package ru.mirea.lugovoy.mireaproject.ui.music;
 
 import android.app.Service;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.os.IBinder;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-import ru.mirea.lugovoy.mireaproject.recorder.RecorderFragment;
+import ru.mirea.lugovoy.mireaproject.ui.recorder.RecorderFragment;
 
 public class MusicService extends Service
 {

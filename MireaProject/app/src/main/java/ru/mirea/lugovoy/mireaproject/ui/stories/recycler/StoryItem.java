@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.stories.recycler;
+package ru.mirea.lugovoy.mireaproject.ui.stories.recycler;
 
 public class StoryItem
 {

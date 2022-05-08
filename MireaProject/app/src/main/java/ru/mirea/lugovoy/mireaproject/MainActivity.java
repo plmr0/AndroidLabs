@@ -19,8 +19,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
-import ru.mirea.lugovoy.mireaproject.stories.db.App;
-import ru.mirea.lugovoy.mireaproject.stories.db.AppDatabase;
+import ru.mirea.lugovoy.mireaproject.db.App;
+import ru.mirea.lugovoy.mireaproject.ui.stories.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity
 {

@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.camera;
+package ru.mirea.lugovoy.mireaproject.ui.camera;
 
 import android.Manifest;
 import android.annotation.SuppressLint;

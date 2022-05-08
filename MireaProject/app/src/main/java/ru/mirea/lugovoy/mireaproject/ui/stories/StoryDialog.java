@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.stories;
+package ru.mirea.lugovoy.mireaproject.ui.stories;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import ru.mirea.lugovoy.mireaproject.R;
-import ru.mirea.lugovoy.mireaproject.stories.db.Story;
+import ru.mirea.lugovoy.mireaproject.ui.stories.db.Story;
 
 public class StoryDialog extends DialogFragment
 {

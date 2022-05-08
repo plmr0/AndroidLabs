@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.camera;
+package ru.mirea.lugovoy.mireaproject.ui.camera;
 
 import androidx.core.content.FileProvider;
 

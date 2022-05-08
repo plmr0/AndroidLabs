@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.browser;
+package ru.mirea.lugovoy.mireaproject.ui.browser;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

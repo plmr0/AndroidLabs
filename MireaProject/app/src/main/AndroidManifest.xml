@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".stories.db.App"
+        android:name=".db.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -45,13 +45,13 @@
             android:exported="false" />
 
         <service
-            android:name=".music.MusicService"
+            android:name=".ui.music.MusicService"
             android:enabled="true"
             android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="ru.mirea.lugovoy.mireaproject.camera.Provider"
+            android:authorities="ru.mirea.lugovoy.mireaproject.ui.camera.Provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

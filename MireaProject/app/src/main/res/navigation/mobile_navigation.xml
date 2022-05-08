@@ -7,42 +7,42 @@
 
     <fragment
         android:id="@+id/nav_calculator"
-        android:name="ru.mirea.lugovoy.mireaproject.calculator.CalculatorFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.calculator.CalculatorFragment"
         android:label="@string/menu_calculator"
         tools:layout="@layout/fragment_calculator" />
     <fragment
         android:id="@+id/nav_browser"
-        android:name="ru.mirea.lugovoy.mireaproject.browser.BrowserFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.browser.BrowserFragment"
         android:label="@string/menu_browser"
         tools:layout="@layout/fragment_browser" />
     <fragment
         android:id="@+id/nav_music"
-        android:name="ru.mirea.lugovoy.mireaproject.music.MusicFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.music.MusicFragment"
         android:label="@string/menu_music"
         tools:layout="@layout/fragment_music" />
     <fragment
         android:id="@+id/nav_sensors"
-        android:name="ru.mirea.lugovoy.mireaproject.sensors.SensorsFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.sensors.SensorsFragment"
         android:label="@string/menu_sensor"
         tools:layout="@layout/fragment_sensor" />
     <fragment
         android:id="@+id/nav_camera"
-        android:name="ru.mirea.lugovoy.mireaproject.camera.CameraFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.camera.CameraFragment"
         android:label="@string/menu_camera"
         tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/nav_recorder"
-        android:name="ru.mirea.lugovoy.mireaproject.recorder.RecorderFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.recorder.RecorderFragment"
         android:label="@string/menu_recorder"
         tools:layout="@layout/fragment_recorder" />
     <fragment
         android:id="@+id/nav_stories"
-        android:name="ru.mirea.lugovoy.mireaproject.stories.StoriesFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.stories.StoriesFragment"
         android:label="@string/menu_stories"
         tools:layout="@layout/fragment_stories" />
     <fragment
         android:id="@+id/nav_web_info"
-        android:name="ru.mirea.lugovoy.mireaproject.webinfo.WebInfoFragment"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.webinfo.WebInfoFragment"
         android:label="@string/menu_web"
         tools:layout="@layout/fragment_web_info" />
 </navigation>

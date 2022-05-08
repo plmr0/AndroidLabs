@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.sensors;
+package ru.mirea.lugovoy.mireaproject.ui.sensors;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

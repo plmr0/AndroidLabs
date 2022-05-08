@@ -1,4 +1,4 @@
-package ru.mirea.lugovoy.mireaproject.stories;
+package ru.mirea.lugovoy.mireaproject.ui.stories;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,10 +21,10 @@ import java.util.List;
 
 import ru.mirea.lugovoy.mireaproject.MainActivity;
 import ru.mirea.lugovoy.mireaproject.R;
-import ru.mirea.lugovoy.mireaproject.stories.db.Story;
-import ru.mirea.lugovoy.mireaproject.stories.db.StoryDao;
-import ru.mirea.lugovoy.mireaproject.stories.recycler.StoryAdapter;
-import ru.mirea.lugovoy.mireaproject.stories.recycler.StoryItem;
+import ru.mirea.lugovoy.mireaproject.ui.stories.db.Story;
+import ru.mirea.lugovoy.mireaproject.ui.stories.db.StoryDao;
+import ru.mirea.lugovoy.mireaproject.ui.stories.recycler.StoryAdapter;
+import ru.mirea.lugovoy.mireaproject.ui.stories.recycler.StoryItem;
 
 public class StoriesFragment extends Fragment
 {
