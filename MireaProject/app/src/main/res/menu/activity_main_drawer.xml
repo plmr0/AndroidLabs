@@ -40,5 +40,9 @@
             android:id="@+id/nav_photo"
             android:icon="@drawable/ic_menu_photo"
             android:title="@string/photo_title" />
+        <item
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/ic_menu_maps"
+            android:title="@string/maps_title" />
     </group>
 </menu>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.maps.MapsFragment">
+
+    <com.yandex.mapkit.mapview.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.yandex.mapkit.mapview.MapView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/zoom_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:src="@drawable/ic_maps_zoom_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <ImageButton
+            android:id="@+id/zoom_out_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:src="@drawable/ic_maps_zoom_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zoom_in_button" />
+
+        <ImageButton
+            android:id="@+id/build_route_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:alpha="0.7"
+            android:src="@drawable/ic_maps_route"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zoom_out_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

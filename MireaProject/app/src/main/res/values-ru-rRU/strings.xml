@@ -58,4 +58,13 @@
     <string name="web_info_downloading">Загрузка…</string>
     <string name="photo_title">Фотографии</string>
     <string name="photo_camera_no_access">Нет доступа к камере!</string>
+    <string name="maps_title">Карты</string>
+    <string name="maps_close_dialog">Закрыть</string>
+    <string name="maps_establishment">Дата основания</string>
+    <string name="maps_coordinates">Координаты</string>
+    <string name="maps_address">Адрес</string>
+    <string name="maps_build_route">Построить маршрут</string>
+    <string name="maps_confirm">Построить</string>
+    <string name="maps_build_route_description">Построить маршрут от дома до университета</string>
+    <string name="maps_build_route_destination">Точка назначения</string>
 </resources>

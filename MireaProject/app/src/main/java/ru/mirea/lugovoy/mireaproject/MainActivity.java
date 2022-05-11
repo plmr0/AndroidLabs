@@ -3,6 +3,8 @@ package ru.mirea.lugovoy.mireaproject;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.yandex.mapkit.MapKitFactory;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,11 +27,11 @@ import ru.mirea.lugovoy.mireaproject.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity
 {
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
-
     private final String SAVED_NAME = "saved_name";
     private final String SAVED_GROUP = "saved_group";
+
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityMainBinding binding;
 
     private TextView navName;
     private TextView navGroup;
@@ -45,6 +48,18 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
+        ApplicationInfo ai = null;
+        try
+        {
+            ai = this.getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            String key = ai.metaData.getString("mapToken");
+            MapKitFactory.setApiKey(key);
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -58,7 +73,8 @@ public class MainActivity extends AppCompatActivity
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_calculator, R.id.nav_browser, R.id.nav_music,
                 R.id.nav_sensors, R.id.nav_camera, R.id.nav_recorder,
-                R.id.nav_stories, R.id.nav_bitcoin, R.id.nav_photo)
+                R.id.nav_stories, R.id.nav_bitcoin, R.id.nav_photo,
+                R.id.nav_maps)
                 .setOpenableLayout(drawer)
                 .build();
 

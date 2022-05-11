@@ -50,4 +50,9 @@
         android:name="ru.mirea.lugovoy.mireaproject.ui.photo.PhotoFragment"
         android:label="@string/photo_title"
         tools:layout="@layout/fragment_photo" />
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="ru.mirea.lugovoy.mireaproject.ui.maps.MapsFragment"
+        android:label="@string/maps_title"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

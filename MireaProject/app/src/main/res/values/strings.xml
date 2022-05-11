@@ -90,5 +90,15 @@
     <string name="photo_title">Photos</string>
     <string name="photo_camera_no_access">No access to camera!</string>
 
+    <string name="maps_title">Maps</string>
+    <string name="maps_close_dialog">Close</string>
+    <string name="maps_establishment">Establishment</string>
+    <string name="maps_coordinates">Coordinates</string>
+    <string name="maps_address">Address</string>
+    <string name="maps_build_route">Build a route</string>
+    <string name="maps_confirm">Build</string>
+    <string name="maps_build_route_description">Build a route from home to university</string>
+    <string name="maps_build_route_destination">Destination</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

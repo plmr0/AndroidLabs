@@ -22,6 +22,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MireaProject">
 
+        <service
+            android:name=".ui.music.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="ru.mirea.lugovoy.mireaproject.ui.camera.Provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
         <activity
             android:name=".AuthActivity"
             android:exported="true">
@@ -44,20 +59,10 @@
             android:label="@string/action_settings"
             android:exported="false" />
 
-        <service
-            android:name=".ui.music.MusicService"
-            android:enabled="true"
-            android:exported="true" />
+        <meta-data
+            android:name = "mapToken"
+            android:value = "${KEY}"/>
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="ru.mirea.lugovoy.mireaproject.ui.camera.Provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths" />
-        </provider>
     </application>
 
 </manifest>
