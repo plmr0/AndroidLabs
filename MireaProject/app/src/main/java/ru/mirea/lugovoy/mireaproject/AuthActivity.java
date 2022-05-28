@@ -68,7 +68,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
         if (requestCode == 6969 && resultCode == RESULT_CANCELED)
         {
-            finishAndRemoveTask();
+            finish();
         }
     }
 
@@ -81,7 +81,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            statusTextView.setText(R.string.signed_out);
             findViewById(R.id.passwordEditText).setVisibility(View.VISIBLE);
             findViewById(R.id.emailEditText).setVisibility(View.VISIBLE);
             findViewById(R.id.signInButton).setVisibility(View.VISIBLE);

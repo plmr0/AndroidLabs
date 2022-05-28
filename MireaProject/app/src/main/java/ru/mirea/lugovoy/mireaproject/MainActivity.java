@@ -24,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import ru.mirea.lugovoy.mireaproject.databinding.ActivityMainBinding;
 import ru.mirea.lugovoy.mireaproject.db.App;
 import ru.mirea.lugovoy.mireaproject.db.AppDatabase;
+import ru.mirea.lugovoy.mireaproject.ui.music.MusicFragment;
+import ru.mirea.lugovoy.mireaproject.ui.music.MusicService;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -135,6 +137,7 @@ public class MainActivity extends AppCompatActivity
                 return true;
             case R.id.action_logout:
                 setResult(RESULT_OK);
+                MusicFragment.destroyService();
                 finish();
                 return true;
         }
@@ -146,6 +149,7 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed()
     {
         setResult(RESULT_CANCELED);
+        MusicFragment.destroyService();
         finish();
     }
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity
 {
@@ -28,10 +29,10 @@ public class SettingsActivity extends AppCompatActivity
         setContentView(R.layout.activity_settings);
         setTitle(R.string.action_settings);
 
-        this.nameEditText = (EditText) findViewById(R.id.nameEditText);
-        this.groupEditText = (EditText) findViewById(R.id.groupEditText);
+        this.nameEditText = findViewById(R.id.nameEditText);
+        this.groupEditText = findViewById(R.id.groupEditText);
 
-        this.saveButton = (Button) findViewById(R.id.saveSettingsButton);
+        this.saveButton = findViewById(R.id.saveSettingsButton);
 
         this.saveButton.setOnClickListener(this::onClickSave);
 
@@ -66,6 +67,12 @@ public class SettingsActivity extends AppCompatActivity
 
     private void onClickSave(View view)
     {
+        if (checkIfEmpty())
+        {
+            Toast.makeText(this, R.string.settings_some_empty, Toast.LENGTH_LONG).show();
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit();
 
         String name = this.nameEditText.getText().toString();
@@ -93,5 +100,10 @@ public class SettingsActivity extends AppCompatActivity
 
         setResult(RESULT_OK, resultIntent);
         finish();
+    }
+
+    private boolean checkIfEmpty()
+    {
+        return this.nameEditText.getText().length() == 0 || this.groupEditText.getText().length() == 0;
     }
 }

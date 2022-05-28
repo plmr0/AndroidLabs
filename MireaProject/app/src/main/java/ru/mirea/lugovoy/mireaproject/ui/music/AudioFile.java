@@ -6,7 +6,9 @@ import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 
-public class AudioFile
+import java.io.Serializable;
+
+public class AudioFile implements Serializable
 {
     private String author;
     private String title;

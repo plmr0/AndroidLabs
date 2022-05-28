@@ -17,7 +17,7 @@
 
             <EditText
                 android:id="@+id/editTextAddressBar"
-                android:layout_width="308dp"
+                android:layout_width="290dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"

@@ -39,20 +39,14 @@
     <string name="story_add_cancel">Отмена</string>
     <string name="story_subject_name">Тема</string>
     <string name="story_text_name">Текст</string>
-    <string name="label_emailpassword">Аутентификация через Почту/Пароль</string>
-    <string name="desc_emailpassword">Используйте почту для аутентификации через Firebase</string>
-    <string name="hint_user_id">Идентификатор пользователя</string>
-    <string name="sign_in">Войти</string>
-    <string name="create_account">Создать аккаунт</string>
-    <string name="sign_out">Выйти</string>
-    <string name="verify_email">Подтвердите почту</string>
-    <string name="signed_in">Авторизован</string>
-    <string name="signed_out">Не авторизован</string>
+    <string name="auth_sign_in">Войти</string>
+    <string name="auth_create_account">Создать аккаунт</string>
+    <string name="auth_sign_out">Выйти</string>
+    <string name="auth_verify_email">Подтвердите почту</string>
     <string name="auth_failed">Не удалось войти</string>
-    <string name="emailpassword_title_text">Почта и пароль</string>
-    <string name="error_sign_in_failed">Не удалось войти, смотрите логи</string>
-    <string name="email">Почта</string>
-    <string name="password">Пароль</string>
+    <string name="auth_error_sign_in_failed">Не удалось войти, смотрите логи</string>
+    <string name="auth_email">Почта</string>
+    <string name="auth_password">Пароль</string>
     <string name="menu_web">Web Инфо</string>
     <string name="web_info_no_internet">Нет Соединения</string>
     <string name="web_info_downloading">Загрузка…</string>
@@ -67,4 +61,5 @@
     <string name="maps_confirm">Построить</string>
     <string name="maps_build_route_description">Построить маршрут от дома до университета</string>
     <string name="maps_build_route_destination">Точка назначения</string>
+    <string name="settings_some_empty">Некоторые параметры пустые</string>
 </resources>

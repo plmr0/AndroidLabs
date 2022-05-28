@@ -38,8 +38,8 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     {
         View view = inflater.inflate(R.layout.fragment_calculator, container, false);
 
-        this.textViewResult = (TextView) view.findViewById(R.id.textViewResult);
-        this.textViewPrevious = (TextView) view.findViewById(R.id.textViewPrevious);
+        this.textViewResult = view.findViewById(R.id.textViewResult);
+        this.textViewPrevious = view.findViewById(R.id.textViewPrevious);
 
         Button zero = view.findViewById(R.id.buttonZero);
         zero.setOnClickListener(this);
@@ -147,6 +147,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private void calculate()
     {
         if (!this.input.isEmpty() && (!this.previous.isEmpty()))
@@ -181,7 +182,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             }
             else // Дробное
             {
-                this.input = String.valueOf(result);
+                this.input = String.format("%.5f", result).replace(',', '.');
             }
 
             this.textViewResult.setText(this.input);

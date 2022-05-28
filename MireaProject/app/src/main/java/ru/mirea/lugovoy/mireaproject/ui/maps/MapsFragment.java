@@ -1,5 +1,6 @@
 package ru.mirea.lugovoy.mireaproject.ui.maps;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.yandex.mapkit.Animation;
+import com.yandex.mapkit.LocalizedValue;
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.RequestPoint;
 import com.yandex.mapkit.RequestPointType;
@@ -95,6 +97,7 @@ public class MapsFragment extends Fragment implements DrivingSession.DrivingRout
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        MapKitFactory.setLocale("ru_RU");
         MapKitFactory.initialize(requireContext());
         DirectionsFactory.initialize(requireContext());
 
@@ -115,6 +118,8 @@ public class MapsFragment extends Fragment implements DrivingSession.DrivingRout
 
         this.drivingRouter = DirectionsFactory.getInstance().createDrivingRouter();
         this.mapObjects = this.mapView.getMap().getMapObjects().addCollection();
+
+        checkTheme();
 
         initializeBranches();
         setBranchesOnMap();
@@ -143,8 +148,16 @@ public class MapsFragment extends Fragment implements DrivingSession.DrivingRout
     {
         cleanRoute();
 
+        LocalizedValue value = list.get(0).getMetadata().getWeight().getDistance();
+
         this.route = this.mapObjects.addPolyline(list.get(0).getGeometry());
         this.route.setStrokeColor(color);
+
+        this.mapView.getMap().move(
+                new CameraPosition(HOME_CITY, 13.0f, 0.0f, 0.0f),
+                new Animation(Animation.Type.SMOOTH, 0), null);
+
+        Toast.makeText(getActivity(), value.getText(), Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -166,20 +179,34 @@ public class MapsFragment extends Fragment implements DrivingSession.DrivingRout
         }
     }
 
+    private void checkTheme()
+    {
+        int nightModeFlags = requireContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags)
+        {
+            case Configuration.UI_MODE_NIGHT_YES:
+                this.mapView.getMap().setNightModeEnabled(true);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                this.mapView.getMap().setNightModeEnabled(false);
+                break;
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                break;
+        }
+    }
+
     private void zoomIn(View view)
     {
         this.mapView.getMap().move(new CameraPosition(this.mapView.getMap().getCameraPosition().getTarget(),
                         this.mapView.getMap().getCameraPosition().getZoom() + 1, 0.0f, 0.0f),
-                new Animation(Animation.Type.SMOOTH, 0.5f),
-                null);
+                new Animation(Animation.Type.SMOOTH, 0.2f), null);
     }
 
     private void zoomOut(View view)
     {
         this.mapView.getMap().move(new CameraPosition(this.mapView.getMap().getCameraPosition().getTarget(),
                         this.mapView.getMap().getCameraPosition().getZoom() - 1, 0.0f, 0.0f),
-                new Animation(Animation.Type.SMOOTH, 0.5f),
-                null);
+                new Animation(Animation.Type.SMOOTH, 0.2f), null);
     }
 
     private void initializeBranches()

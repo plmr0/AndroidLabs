@@ -5,8 +5,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.IBinder;
@@ -22,10 +25,11 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 import ru.mirea.lugovoy.mireaproject.R;
+import ru.mirea.lugovoy.mireaproject.ui.photo.BitmapUtility;
 
 public class MusicFragment extends Fragment implements View.OnClickListener
 {
-    private boolean isBound;
+    private static boolean isBound;
     private boolean isPaused;
 
     @SuppressLint("StaticFieldLeak") public static ImageButton previousButton;
@@ -41,9 +45,9 @@ public class MusicFragment extends Fragment implements View.OnClickListener
 
     private static Deque<AudioFile> deque = new LinkedList<>();
 
-    private static MusicService musicService;
+    public static MusicService musicService;
 
-    private ServiceConnection connection = new ServiceConnection()
+    private static ServiceConnection connection = new ServiceConnection()
     {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service)
@@ -60,10 +64,14 @@ public class MusicFragment extends Fragment implements View.OnClickListener
         }
     };
 
+    @SuppressLint("StaticFieldLeak") private static Context context;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        context = getContext();
     }
 
     @Override
@@ -81,16 +89,36 @@ public class MusicFragment extends Fragment implements View.OnClickListener
         nextButton = view.findViewById(R.id.nextTrackButton);
         nextButton.setOnClickListener(this);
 
-        author = (TextView) view.findViewById(R.id.authorName);
-        title = (TextView) view.findViewById(R.id.trackName);
+        author = view.findViewById(R.id.authorName);
+        title = view.findViewById(R.id.trackName);
 
-        image = (ImageView) view.findViewById(R.id.albumImage);
+        image = view.findViewById(R.id.albumImage);
 
-        loadSongs();
-        loadFirstSong();
-        bindService();
+        loadPreviousState(savedInstanceState);
 
         return view;
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        unbindService();
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState)
+    {
+        Bitmap img = ((BitmapDrawable) image.getDrawable()).getBitmap();
+
+        outState.putString("author", author.getText().toString());
+        outState.putString("title", title.getText().toString());
+
+        outState.putByteArray("image", BitmapUtility.getBytes(img));
+
+        outState.putInt("button", (int) statusButton.getTag());
+
+        super.onSaveInstanceState(outState);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -115,12 +143,31 @@ public class MusicFragment extends Fragment implements View.OnClickListener
         }
     }
 
-    @Override
-    public void onDestroy()
+    private void loadPreviousState(Bundle state)
     {
-        super.onDestroy();
-        unbindService();
-        this.isBound = false;
+        loadSongs();
+
+        if (state == null)
+        {
+            loadFirstSong();
+            bindService();
+        }
+        else
+        {
+            title.setText(state.getString("title"));
+            author.setText(state.getString("author"));
+            image.setImageBitmap(BitmapUtility.getImage(state.getByteArray("image")));
+
+            int button = state.getInt("button");
+            if (button == R.drawable.ic_music_play)
+            {
+                setButtonPlay();
+            }
+            else if (button == R.drawable.ic_music_pause)
+            {
+                setButtonPause();
+            }
+        }
     }
 
     private void bindService()
@@ -129,11 +176,11 @@ public class MusicFragment extends Fragment implements View.OnClickListener
         requireActivity().bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
-    private void unbindService()
+    private static void unbindService()
     {
         if (isBound)
         {
-            requireActivity().unbindService(connection);
+            context.unbindService(connection);
             isBound = false;
         }
     }
@@ -227,5 +274,14 @@ public class MusicFragment extends Fragment implements View.OnClickListener
     {
         statusButton.setImageResource(R.drawable.ic_music_pause);
         statusButton.setTag(R.drawable.ic_music_pause);
+    }
+
+    public static void destroyService()
+    {
+        if (musicService != null)
+        {
+            musicService.stop();
+        }
+        unbindService();
     }
 }
